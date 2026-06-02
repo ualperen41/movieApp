@@ -1,4 +1,38 @@
 import { registerRootComponent } from 'expo';
+import * as ReactNative from 'react-native';
+
+// Suppress ViewPropTypes warnings
+if (!ReactNative.ViewPropTypes) {
+  Object.defineProperty(ReactNative, 'ViewPropTypes', {
+    get() {
+      return require('deprecated-react-native-prop-types').ViewPropTypes;
+    },
+  });
+}
+
+if (!ReactNative.ColorPropType) {
+  Object.defineProperty(ReactNative, 'ColorPropType', {
+    get() {
+      return require('deprecated-react-native-prop-types').ColorPropType;
+    },
+  });
+}
+
+if (!ReactNative.EdgeInsetsPropType) {
+  Object.defineProperty(ReactNative, 'EdgeInsetsPropType', {
+    get() {
+      return require('deprecated-react-native-prop-types').EdgeInsetsPropType;
+    },
+  });
+}
+
+if (!ReactNative.PointPropType) {
+  Object.defineProperty(ReactNative, 'PointPropType', {
+    get() {
+      return require('deprecated-react-native-prop-types').PointPropType;
+    },
+  });
+}
 
 import App from './App';
 
